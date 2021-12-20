@@ -9,12 +9,4 @@
     <select id="findUserById" resultType="com.example.runWith.domain.UserDomain">
         SELECT * FROM user WHERE id=#{id}
     </select>
-
-    <select id="searchUser" parameterType="String" resultType="com.example.runWith.domain.UserDomain">
-        SELECT id FROM user WHERE id LIKE CONCAT(#{keyword}, '%')
-    </select>
-
-    <insert id="joinUser" parameterType="com.example.runWith.domain.UserDomain" useGeneratedKeys="true" keyProperty="newUser._uid">
-        INSERT INTO user (id, pw) VALUES (#{newUser.id}, #{newUser.pw})
-    </insert>
 </mapper>
