@@ -13,7 +13,7 @@
     </select>
 
     <update id="updateRecord" parameterType="com.example.runWith.domain.RecordDomain">
-        UPDATE record SET count=#{newRecord.count} WHERE id=#{newRecord.id} AND day=#{newRecord.day}
+        UPDATE record SET count=#{newRecord.count} WHERE id=#{id} AND day=#{day}
     </update>
 
     <insert id="addRecord" parameterType="com.example.runWith.domain.RecordDomain">
