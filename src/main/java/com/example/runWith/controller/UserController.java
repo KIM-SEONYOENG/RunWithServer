@@ -5,6 +5,7 @@ import com.example.runWith.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -16,6 +17,13 @@ public class UserController {
     @GetMapping
     public List<UserDomain> findAllUser() {
         return userService.findAllUser();
+    }
+
+    @GetMapping("/findPw")
+    public HashMap<String, String> findPw(@RequestParam("id") String id) {
+        HashMap<String, String> password = new HashMap<>();
+        password.put("pw", "1234");
+        return password;
     }
 
     @GetMapping("/searchUser")
