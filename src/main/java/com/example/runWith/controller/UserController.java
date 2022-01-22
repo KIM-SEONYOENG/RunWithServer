@@ -27,5 +27,5 @@ public class UserController {
     }
 
     @GetMapping("/searchUser")
-    public List<UserDomain> searchUser(@RequestParam String keyword) { return userService.searchUser(keyword); }
+    public List<UserDomain> searchUser(@RequestParam("keyword") String keyword) { return userService.searchUser(keyword); }
 }
