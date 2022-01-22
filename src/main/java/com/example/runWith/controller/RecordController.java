@@ -6,16 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/record")
+@RequestMapping(value = "/record")
 public class RecordController {
     @Autowired
     private RecordService recordService;
 
-    @GetMapping("/find")
+    @GetMapping("/findRecord")
     public RecordDomain findRecord(@RequestParam("id") String id, @RequestParam("day") String day) {
         return recordService.findRecord(id, day);
     }
 
-    @PostMapping("/add")
+    @PostMapping("/addRecord")
     public void addRecord(@RequestBody RecordDomain newRecord) { recordService.addRecord(newRecord);}
 }
