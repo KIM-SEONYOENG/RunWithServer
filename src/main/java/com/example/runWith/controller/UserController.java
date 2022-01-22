@@ -18,6 +18,9 @@ public class UserController {
         return userService.findAllUser();
     }
 
+    @GetMapping("/searchUser")
+    public List<UserDomain> searchUser(@RequestParam("keyword") String keyword) { return userService.searchUser(keyword); }
+
     @GetMapping("/login")
     public boolean login(@RequestBody UserDomain user) {
         UserDomain userDomain = userService.findUserById(user.getId());
@@ -25,7 +28,4 @@ public class UserController {
             return true;
         return false;
     }
-
-    @GetMapping("/searchUser")
-    public List<UserDomain> searchUser(@RequestParam("keyword") String keyword) { return userService.searchUser(keyword); }
 }
