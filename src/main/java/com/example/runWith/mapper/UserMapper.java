@@ -10,5 +10,5 @@ import java.util.List;
 public interface UserMapper {
     public List<UserDomain> findAllUser();
     public UserDomain findUserById(@Param("id") String id);
-    public List<UserDomain> findUser(@Param("keyword") String keyword);
+    public List<UserDomain> searchUser(@Param("keyword") String keyword);
 }

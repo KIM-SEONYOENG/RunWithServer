@@ -1,5 +1,6 @@
 package com.example.runWith.controller;
 
+import com.example.runWith.domain.LoginResponse;
 import com.example.runWith.domain.UserDomain;
 import com.example.runWith.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/user")
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     UserService userService;
@@ -27,13 +28,8 @@ public class UserController {
     }
 
     @GetMapping("/searchUser")
-    public List<UserDomain> searchUser(@RequestParam("keyword") String keyword) { return userService.searchUser(keyword); }
+    public List<UserDomain> search(@RequestParam("keyword") String keyword) { return userService.searchUser(keyword); }
 
     @GetMapping("/login")
-    public boolean login(@RequestBody UserDomain user) {
-        UserDomain userDomain = userService.findUserById(user.getId());
-        if(userDomain.getPw().equals(user.getPw()))
-            return true;
-        return false;
-    }
+    public LoginResponse login(@RequestParam("id") String id, @RequestParam("pw") String pw) { return userService.findUserById(id, pw); }
 }

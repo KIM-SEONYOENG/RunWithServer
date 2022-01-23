@@ -10,11 +10,7 @@
         SELECT * FROM user WHERE id=#{id}
     </select>
 
-    <select id="findUser" resultType="com.example.runWith.domain.UserDomain">
-        SELECT * FROM user WHERE id LIKE CONCAT(#{keyword}, '%')
-    </select>
-
-    <select id="searchUser" resultType="com.example.runWith.domain.UserDomain">
-        SELECT id FROM user WHERE _uid=#{uid}
+    <select id="searchUser" parameterType="String" resultType="com.example.runWith.domain.UserDomain">
+        SELECT id FROM user WHERE id LIKE CONCAT(#{keyword}, '%')
     </select>
 </mapper>

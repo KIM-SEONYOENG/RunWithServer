@@ -15,10 +15,10 @@ public class RecordService {
     public List<RecordDomain> findAllRecord() { return recordDao.findAllRecord(); }
     public RecordDomain findRecord (String id, String day) { return recordDao.findRecord(id, day); }
 
-//    public void addRecord(RecordDomain newRecord) {
-//        if(recordDao.findRecord(newRecord.getId(), newRecord.getDay()) != null)
-//            recordDao.updateRecord(newRecord);
-//        else
-//            recordDao.addRecord(newRecord);
-//    }
+    public void addRecord(RecordDomain newRecord) {
+        if(recordDao.findRecord(newRecord.getId(), newRecord.getDay()) != null)
+            recordDao.updateRecord(newRecord);
+        else
+            recordDao.addRecord(newRecord);
+    }
 }

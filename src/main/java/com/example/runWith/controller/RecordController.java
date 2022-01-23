@@ -23,6 +23,6 @@ public class RecordController {
         return recordService.findRecord(id, day);
     }
 
-//    @PostMapping("/addRecord")
-//    public void addRecord(@RequestBody RecordDomain newRecord) { recordService.addRecord(newRecord);}
+    @PostMapping("/addRecord")
+    public void addRecord(@RequestBody RecordDomain newRecord) { recordService.addRecord(newRecord);}
 }
