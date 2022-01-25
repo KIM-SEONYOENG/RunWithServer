@@ -14,7 +14,7 @@
         SELECT id FROM user WHERE id LIKE CONCAT(#{keyword}, '%')
     </select>
 
-    <insert id="joinUser" parameterType="com.example.runWith.domain.UserDomain">
+    <insert id="joinUser" parameterType="com.example.runWith.domain.UserDomain" useGeneratedKeys="true" keyProperty="newUser._uid">
         INSERT INTO user (id, pw) VALUES (#{newUser.id}, #{newUser.pw})
     </insert>
 </mapper>

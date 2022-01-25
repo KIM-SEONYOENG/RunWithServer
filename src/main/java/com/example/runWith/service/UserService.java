@@ -35,4 +35,23 @@ public class UserService {
         return response;
     }
     public List<UserDomain> searchUser(String keyword) { return userDao.searchUser(keyword); }
+
+    public LoginResponse joinUser(UserDomain newUser) {
+        LoginResponse response = new LoginResponse();
+
+        if(userDao.findUserById(newUser.getId())!=null) {
+            response.setResultCode(300);
+            response.setMessage("중복된 아이디입니다.");
+        }
+
+        if(userDao.joinUser(newUser) > 0) {
+            response.setResultCode(200);
+            response.setMessage("회원가입 성공");
+        } else {
+            response.setResultCode(300);
+            response.setMessage("회원가입 실패");
+        }
+
+        return response;
+    }
 }

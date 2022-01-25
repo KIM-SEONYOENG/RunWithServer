@@ -12,5 +12,5 @@ public interface UserMapper {
     public List<UserDomain> findAllUser();
     public UserDomain findUserById(@Param("id") String id);
     public List<UserDomain> searchUser(@Param("keyword") String keyword);
-    public void joinUser(@Param("newUser") UserDomain newUser);
+    public long joinUser(@Param("newUser") UserDomain newUser);
 }

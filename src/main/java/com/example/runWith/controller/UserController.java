@@ -34,5 +34,5 @@ public class UserController {
     public LoginResponse login(@RequestParam("id") String id, @RequestParam("pw") String pw) { return userService.findUserById(id, pw); }
 
     @PostMapping("/join")
-    public void JoinUser(@RequestBody("newUser") UserDomain newUser)
+    public LoginResponse JoinUser(@RequestBody UserDomain newUser) { return userService.joinUser(newUser); }
 }
