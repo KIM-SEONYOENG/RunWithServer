@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.runWith.mapper.TokenMapper">
+    <select id="countToken">
+        SELECT COUNT(num) FROM token WHERE id=#{id}
+    </select>
+
+    <update id="updateToken" parameterType="com.example.runWith.domain.TokenDomain">
+        UPDATE token SET num={newToken.num} WHERE id=#{newToken.id}
+    </update>
+
+    <insert id="addToken" parameterType="com.example.runWith.domain.TokenDomain">
+        INSERT INTO token (id, num) VALUES (#{newToken.id}, #{newToken.num})
+    </insert>
+
+</mapper>
