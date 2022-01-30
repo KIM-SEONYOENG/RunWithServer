@@ -5,19 +5,19 @@
         SELECT * FROM record
     </select>
 
-    <select id="findRecord" resultType="com.example.runWith.domain.RecordDomain">
-        SELECT * FROM record WHERE id=#{id} AND day=#{day}
-    </select>
-
-    <insert id="addRecord" parameterType="com.example.runWith.domain.RecordDomain">
-        INSERT INTO record (id, day, count) VALUES (#{newRecord.id}, #{newRecord.day}, #{newRecord.count})
-    </insert>
-
     <select id="showRecord" resultType="com.example.runWith.domain.RecordDomain">
         SELECT * FROM record WHERE id=#{id}
+
+    <select id="findRecord" parameterType="com.example.runWith.domain.RecordDomain">
+        SELECT * FROM record WHERE id=#{id} AND day=#{day}
     </select>
 
     <update id="updateRecord" parameterType="com.example.runWith.domain.RecordDomain">
         UPDATE record SET count=#{newRecord.count} WHERE id=#{newRecord.id} AND day=#{newRecord.day}
     </update>
+
+    <insert id="addRecord" parameterType="com.example.runWith.domain.RecordDomain">
+        INSERT INTO record (day, count, uid) VALUES (#{newRecord.day}, #{newRecord.count}, #{newRecord.uid})
+    </insert>
+
 </mapper>

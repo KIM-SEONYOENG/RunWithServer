@@ -14,4 +14,5 @@ public class UserService {
 
     public List<UserDomain> findAllUser() { return userDao.findAllUser(); }
     public UserDomain findUserById(String id) { return userDao.findUserById(id); }
+    public List<UserDomain> findUser(String keyword) { return userDao.findUser(keyword); }
 }

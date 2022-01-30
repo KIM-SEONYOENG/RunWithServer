@@ -26,6 +26,6 @@ public class UserController {
         return false;
     }
 
-    @GetMapping("/findUser")
-    public List<UserDomain> findUser(@RequestParam String keyword) { return userService.findUser(keyword); }
+    @GetMapping("/searchUser")
+    public List<UserDomain> searchUser(@RequestParam String keyword) { return userService.searchUser(keyword); }
 }
