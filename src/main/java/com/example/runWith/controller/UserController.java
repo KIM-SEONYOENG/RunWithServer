@@ -1,6 +1,6 @@
 package com.example.runWith.controller;
 
-import com.example.runWith.domain.LoginResponse;
+import com.example.runWith.domain.DataResponse;
 import com.example.runWith.domain.UserDomain;
 import com.example.runWith.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +31,5 @@ public class UserController {
     public List<UserDomain> search(@RequestParam("keyword") String keyword) { return userService.searchUser(keyword); }
 
     @GetMapping("/login")
-    public LoginResponse login(@RequestParam("id") String id, @RequestParam("pw") String pw) { return userService.findUserById(id, pw); }
+    public DataResponse login(@RequestParam("id") String id, @RequestParam("pw") String pw) { return userService.findUserById(id, pw); }
 }

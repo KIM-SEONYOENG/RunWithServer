@@ -1,5 +1,6 @@
 package com.example.runWith.service;
 
+import com.example.runWith.domain.DataResponse;
 import com.example.runWith.domain.TokenDomain;
 import com.example.runWith.mapper.TokenMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,21 @@ public class TokenService {
     @Autowired
     private TokenMapper tokenDao;
 
-    public void addToken(TokenDomain newToken) {
+    public DataResponse addToken(TokenDomain newToken) {
+        TokenDomain result = null;
         if(tokenDao.countToken(newToken.getId()) == 0)
-            tokenDao.addToken(newToken);
+            result = tokenDao.addToken(newToken);
         else
-            tokenDao.updateRecord(newToken);
+            result = tokenDao.updateRecord(newToken);
+
+        DataResponse response = new DataResponse();
+        if(result == null) {
+            response.setResultCode(200);
+            response.setMessage("토큰 저장 성공");
+        } else {
+            response.setResultCode(400);
+            response.setMessage("토큰 저장 실패");
+        }
+        return response;
     }
 }

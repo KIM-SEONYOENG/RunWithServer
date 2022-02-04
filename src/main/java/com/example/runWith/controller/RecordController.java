@@ -25,4 +25,8 @@ public class RecordController {
 
     @PostMapping("/addRecord")
     public void addRecord(@RequestBody RecordDomain newRecord) { recordService.addRecord(newRecord);}
+
+    @GetMapping("/findMemberRecord")
+    public RecordDomain findMemberRecord (@RequestParam("id") String id) { return recordService.findMemberRecord(id); }
+
 }

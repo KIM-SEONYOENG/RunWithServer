@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class Response {
-    private int status;
+public class TeamDomain {
+    String id_f;
+    String id_s;
 }

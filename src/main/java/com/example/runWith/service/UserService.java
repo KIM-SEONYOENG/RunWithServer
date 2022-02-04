@@ -1,6 +1,6 @@
 package com.example.runWith.service;
 
-import com.example.runWith.domain.LoginResponse;
+import com.example.runWith.domain.DataResponse;
 import com.example.runWith.domain.Response;
 import com.example.runWith.domain.UserDomain;
 import com.example.runWith.mapper.UserMapper;
@@ -15,8 +15,8 @@ public class UserService {
     private UserMapper userDao;
 
     public List<UserDomain> findAllUser() { return userDao.findAllUser(); }
-    public LoginResponse findUserById(String id, String pw) {
-        LoginResponse response = new LoginResponse();
+    public DataResponse findUserById(String id, String pw) {
+        DataResponse response = new DataResponse();
         UserDomain user = userDao.findUserById(id);
         if(user == null) {
             response.setResultCode(400);
