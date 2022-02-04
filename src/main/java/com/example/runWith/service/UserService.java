@@ -1,7 +1,6 @@
 package com.example.runWith.service;
 
 import com.example.runWith.domain.DataResponse;
-import com.example.runWith.domain.Response;
 import com.example.runWith.domain.UserDomain;
 import com.example.runWith.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
