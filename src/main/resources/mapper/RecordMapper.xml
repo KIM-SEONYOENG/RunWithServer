@@ -16,4 +16,8 @@
     <update id="updateRecord" parameterType="com.example.runWith.domain.RecordDomain">
         UPDATE record SET count=#{newRecord.count} WHERE id=#{newRecord.id} AND day=#{newRecord.day}
     </update>
+
+    <select id="findMemberRecord" resultType="com.example.runWith.domain.RecordDomain">
+        SELECT * FROM record WHERE id=(SELECT member FROM user WHERE id=#{id}) AND day=curdate();
+    </select>
 </mapper>

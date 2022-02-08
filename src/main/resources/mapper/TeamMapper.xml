@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.runWith.mapper.TeamMapper">
-    <select id="findTeamMember" resultType="com.example.runWith.domain.TeamDomain">
-        SELECT id FROM team WHERE id_f=#{id} OR id_s=#{id}
-    </select>
-</mapper>

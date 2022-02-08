@@ -12,4 +12,5 @@ public interface RecordMapper {
     public RecordDomain findRecord(@Param("id") String id, @Param("day") String day);
     public void addRecord(@Param("newRecord") RecordDomain newRecord);
     public void updateRecord(@Param("newRecord") RecordDomain newRecord);
+    public RecordDomain findMemberRecord(@Param("id") String id);
 }
