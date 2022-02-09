@@ -29,6 +29,9 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java:8.0.26'
 
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+
+	implementation 'com.google.firebase:firebase-admin:6.8.1'
+	implementation 'com.squareup.okhttp3:okhttp:4.9.1'
 }
 
 test {

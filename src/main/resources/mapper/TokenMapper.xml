@@ -13,4 +13,8 @@
         INSERT INTO token (id, num) VALUES (#{newToken.id}, #{newToken.num})
     </insert>
 
+    <select id="findToken" resultType="com.example.runWith.domain.TokenDomain">
+        select * FROM token WHERE id=#{id}
+    </select>
+
 </mapper>
