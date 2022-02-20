@@ -32,4 +32,9 @@ public class UserController {
 
     @GetMapping("/login")
     public DataResponse login(@RequestParam("id") String id, @RequestParam("pw") String pw) { return userService.findUserById(id, pw); }
+
+    @GetMapping("/findDuplicateId")
+    public HashMap<String, Boolean> findDuplicateId(@RequestParam("id") String id) {
+        return userService.findDuplicateId(id);
+    }
 }

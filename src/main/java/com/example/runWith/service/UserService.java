@@ -6,6 +6,7 @@ import com.example.runWith.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -34,4 +35,14 @@ public class UserService {
         return response;
     }
     public List<UserDomain> searchUser(String keyword) { return userDao.searchUser(keyword); }
+
+    public HashMap<String, Boolean> findDuplicateId(String id) {
+        HashMap<String, Boolean> result = new HashMap<>();
+        if(userDao.findUserById(id) == null) {
+            result.put("duplicate", true);
+        } else {
+            result.put("duplicate", false);
+        }
+        return result;
+    }
 }
