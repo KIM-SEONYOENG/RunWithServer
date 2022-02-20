@@ -5,12 +5,12 @@ spring:
   datasource:
     platform: mysql
     driverClassName: com.mysql.cj.jdbc.Driver
-    jdbc-url: jdbc:mysql://localhost:3306/runTest?autoReconnect=true&userSSL=false
+    jdbc-url: jdbc:mysql://localhost:3306/run?autoReconnect=true&userSSL=false
     username: localhost
     password: 1q2w3e4r
   mybatis:
     mapper-locations: classpath:mapper/*.xml
     driverClassName: com.mysql.cj.jdbc.Driver
-    jdbc-url: jdbc:mysql://localhost:3306/runTest?autoReconnect=true&userSSL=false
+    jdbc-url: jdbc:mysql://localhost:3306/run?autoReconnect=true&userSSL=false
     username: localhost
     password: 1q2w3e4r
