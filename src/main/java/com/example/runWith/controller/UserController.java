@@ -37,4 +37,9 @@ public class UserController {
     public HashMap<String, Boolean> findDuplicateId(@RequestParam("id") String id) {
         return userService.findDuplicateId(id);
     }
+
+    @GetMapping("/idCheck")
+    public DataResponse idCheck(@RequestParam("id") String id) {
+        return userService.idCheck(id);
+    }
 }

@@ -45,4 +45,17 @@ public class UserService {
         }
         return result;
     }
+
+    public DataResponse idCheck(String id) {
+        DataResponse response = new DataResponse();
+        if(userDao.idCheck(id) == 0) {
+            response.setResultCode(200);
+            response.setMessage("아이디 확인 완료");
+        }
+        else {
+            response.setResultCode(300);
+            response.setMessage("중복된 아이디입니다.");
+        }
+        return response;
+    }
 }

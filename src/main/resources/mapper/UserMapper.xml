@@ -13,4 +13,8 @@
     <select id="searchUser" parameterType="String" resultType="com.example.runWith.domain.UserDomain">
         SELECT id FROM user WHERE id LIKE CONCAT(#{keyword}, '%')
     </select>
+
+    <select id="idCheck" parameterType="String" resultType="int">
+        SELECT COUNT(id) FROM USER WHERE id=#{id}
+    </select>
 </mapper>
