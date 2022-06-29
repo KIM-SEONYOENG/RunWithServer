@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/token")
+@RequestMapping("/message")
 public class TokenController {
     @Autowired
     private TokenService tokenService;
@@ -24,7 +24,7 @@ public class TokenController {
     public TokenController() {
     }
 
-    @PostMapping("/addToken")
+    @PostMapping("/newToken")
     public DataResponse addToken(@RequestBody TokenDomain newToken){ return tokenService.addToken(newToken);}
 
     @PostMapping("/sendMessage")
