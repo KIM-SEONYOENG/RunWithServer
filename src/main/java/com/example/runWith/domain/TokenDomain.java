@@ -7,5 +7,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TokenDomain {
     private String id;
-    private String num;
+    private String token;
 }

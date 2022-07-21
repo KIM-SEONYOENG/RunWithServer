@@ -16,5 +16,4 @@
     <select id="findToken" resultType="com.example.runWith.domain.TokenDomain">
         select * FROM token WHERE id=#{id}
     </select>
-
 </mapper>

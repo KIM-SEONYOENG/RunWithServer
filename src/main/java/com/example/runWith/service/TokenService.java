@@ -37,7 +37,7 @@ public class TokenService {
     }
 
     public void pushMessage(MessageDomain message) throws IOException {
-        String token = tokenDao.findToken(message.getId()).getNum();
+        String token = tokenDao.findToken(message.getId()).getToken();
 
         System.out.println(token + " " + message.getMsg());
 
