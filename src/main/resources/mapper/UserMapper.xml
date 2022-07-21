@@ -18,7 +18,7 @@
         SELECT COUNT(id) FROM USER WHERE id=#{id}
     </select>
 
-    <insert id="addUser" parameterType="com.example.runWith.domain.UserDomain">
+    <insert id="addUser">
         INSERT INTO user (id) VALUES (#{id})
     </insert>
 </mapper>

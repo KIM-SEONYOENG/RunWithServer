@@ -12,5 +12,5 @@ public interface UserMapper {
     public UserDomain findUserById(@Param("id") String id);
     public List<UserDomain> searchUser(@Param("keyword") String keyword);
     public int idCheck(@Param("id") String id);
-    public UserDomain addUser(@Param("id") String id);
+    public void addUser(@Param("id") String id);
 }
