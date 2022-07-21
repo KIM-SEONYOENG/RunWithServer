@@ -8,10 +8,7 @@ import com.example.runWith.service.TokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -25,7 +22,7 @@ public class TokenController {
     }
 
     @PostMapping("/newToken")
-    public DataResponse addToken(@RequestBody TokenDomain newToken){ return tokenService.addToken(newToken);}
+    public DataResponse addToken(@RequestParam String id, @RequestParam String newToken){ return tokenService.addToken(id, newToken);}
 
     @PostMapping("/sendMessage")
     public void pushMessage(@RequestBody MessageDomain message) throws IOException { tokenService.pushMessage(message); }

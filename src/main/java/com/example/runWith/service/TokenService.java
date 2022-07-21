@@ -18,12 +18,12 @@ public class TokenService {
     @Autowired
     private TokenMapper tokenDao;
 
-    public DataResponse addToken(TokenDomain newToken) {
+    public DataResponse addToken(String id, String newToken) {
         TokenDomain result = null;
-        if(tokenDao.countToken(newToken.getId()) == 0)
-            result = tokenDao.addToken(newToken);
+        if(tokenDao.countToken(id) == 0)
+            result = tokenDao.addToken(id, newToken);
         else
-            result = tokenDao.updateRecord(newToken);
+            result = tokenDao.updateRecord(id, newToken);
 
         DataResponse response = new DataResponse();
         if(result == null) {

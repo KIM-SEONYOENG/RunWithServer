@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface TokenMapper {
     public int countToken(@Param("id") String id);
-    public TokenDomain addToken(@Param("newToken") TokenDomain newToken);
-    public TokenDomain updateRecord(@Param("newToken") TokenDomain newToken);
+    public TokenDomain addToken(@Param("id") String id, @Param("newToken") String newToken);
+    public TokenDomain updateRecord(@Param("id") String id, @Param("newToken") String newToken);
     public TokenDomain findToken(@Param("id") String id);
 }
