@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.runWith.mapper.TokenMapper">
-    <select id="countToken">
-        SELECT COUNT(num) FROM token WHERE id=#{id}
+    <select id="countToken" resultType="int">
+        SELECT COUNT(token) FROM token WHERE id=#{id}
     </select>
 
     <update id="updateToken" parameterType="String">
-        UPDATE token SET num={newToken} WHERE id=#{id}
+        UPDATE token SET token={newToken} WHERE id=#{id}
     </update>
 
-    <insert id="addToken" parameterType="String">
+    <insert id="addToken" parameterType="com.example.runWith.domain">
         INSERT INTO token (id, token) VALUES (#{id}, #{newToken})
     </insert>
 
-    <select id="findToken" resultType="com.example.runWith.domain.TokenDomain">
-        select * FROM token WHERE id=#{id}
+    <select id="findToken" resultType="String">
+        select token FROM token WHERE id=#{id}
     </select>
 </mapper>

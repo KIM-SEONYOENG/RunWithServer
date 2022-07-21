@@ -58,4 +58,17 @@ public class UserService {
         }
         return response;
     }
+
+    public DataResponse addUser(String id) {
+        int resultCode = idCheck(id).getResultCode();
+        if(resultCode == 300) {
+            return new DataResponse(300, "중복된 아이디입니다");
+        }
+        UserDomain newUser = userDao.addUser(id);
+        if(newUser.getId().equals(id)) {
+            return new DataResponse(200, "회원 가입 성공");
+        } else {
+            return new DataResponse(400, "회원 가입 실패");
+        }
+    }
 }

@@ -15,6 +15,9 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @GetMapping("/add")
+    public DataResponse addUser(@RequestParam("id") String id) { return userService.addUser(id); }
+
     @GetMapping
     public List<UserDomain> findAllUser() {
         return userService.findAllUser();

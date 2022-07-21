@@ -25,5 +25,5 @@ public class TokenController {
     public DataResponse addToken(@RequestParam String id, @RequestParam String newToken){ return tokenService.addToken(id, newToken);}
 
     @PostMapping("/sendMessage")
-    public void pushMessage(@RequestBody MessageDomain message) throws IOException { tokenService.pushMessage(message); }
+    public void pushMessage(@RequestParam String id, @RequestParam String message) throws IOException { tokenService.pushMessage(id, message); }
 }

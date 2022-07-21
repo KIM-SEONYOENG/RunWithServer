@@ -36,11 +36,11 @@ public class TokenService {
         return response;
     }
 
-    public void pushMessage(MessageDomain message) throws IOException {
-        String token = tokenDao.findToken(message.getId()).getToken();
+    public void pushMessage(String id, String message) throws IOException {
+        String token = tokenDao.findToken(id);
 
-        System.out.println(token + " " + message.getMsg());
+        System.out.println(token + " " + message);
 
-        firebaseCloudMessageService.sendMessageTo(token, message.getId(), message.getMsg());
+        firebaseCloudMessageService.sendMessageTo(token, id, message);
     }
 }
