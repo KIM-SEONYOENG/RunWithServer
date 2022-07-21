@@ -9,7 +9,7 @@
         UPDATE token SET token={newToken} WHERE id=#{id}
     </update>
 
-    <insert id="addToken" parameterType="com.example.runWith.domain">
+    <insert id="addToken" parameterType="com.example.runWith.domain.TokenDomain">
         INSERT INTO token (id, token) VALUES (#{id}, #{newToken})
     </insert>
 
