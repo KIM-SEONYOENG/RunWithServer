@@ -23,10 +23,12 @@ public class TokenService {
         if(tokenDao.countToken(id) == 0)
             result = tokenDao.addToken(id, newToken);
         else
-            result = tokenDao.updateRecord(id, newToken);
+            result = tokenDao.updateToken(id, newToken);
 
         DataResponse response = new DataResponse();
-        if(result > 1) {
+        System.out.println("result = " + result);
+
+        if(result == 1) {
             response.setResultCode(200);
             response.setMessage("토큰 저장 성공");
         } else {

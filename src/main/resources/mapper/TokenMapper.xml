@@ -6,7 +6,7 @@
     </select>
 
     <update id="updateToken" parameterType="String">
-        UPDATE token SET token={newToken} WHERE id=#{id}
+        UPDATE token SET token=#{newToken} WHERE id=#{id}
     </update>
 
     <insert id="addToken" parameterType="com.example.runWith.domain.TokenDomain">
