@@ -19,14 +19,14 @@ public class TokenService {
     private TokenMapper tokenDao;
 
     public DataResponse addToken(String id, String newToken) {
-        TokenDomain result = null;
+        long result;
         if(tokenDao.countToken(id) == 0)
             result = tokenDao.addToken(id, newToken);
         else
             result = tokenDao.updateRecord(id, newToken);
 
         DataResponse response = new DataResponse();
-        if(result == null) {
+        if(result > 1) {
             response.setResultCode(200);
             response.setMessage("토큰 저장 성공");
         } else {
