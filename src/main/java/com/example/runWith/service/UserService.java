@@ -30,7 +30,9 @@ public class UserService {
 
     public DataResponse idCheck(String id) {
         DataResponse response = new DataResponse();
-        if(userDao.idCheck(id) == 0) {
+        int result = userDao.idCheck(id);
+        System.out.println("idCheck result = " + result);
+        if(result == 0) {
             response.setResultCode(200);
             response.setMessage("아이디 확인 완료");
         }
@@ -43,6 +45,7 @@ public class UserService {
 
     public DataResponse addUser(String id) {
         int resultCode = idCheck(id).getResultCode();
+        System.out.println("addUser result =" + resultCode);
         if(resultCode == 300) {
             return new DataResponse(300, "중복된 아이디입니다");
         }
