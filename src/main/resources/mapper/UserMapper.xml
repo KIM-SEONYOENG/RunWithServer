@@ -15,7 +15,7 @@
     </select>
 
     <select id="idCheck" parameterType="String" resultType="int">
-        SELECT COUNT(id) FROM USER WHERE id=#{id}
+        SELECT COUNT(id) FROM user WHERE id=#{id}
     </select>
 
     <insert id="addUser">
