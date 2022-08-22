@@ -47,6 +47,7 @@ public class UserService {
         int resultCode = idCheck(id).getResultCode();
         System.out.println("addUser result =" + resultCode);
         if(resultCode == 300) {
+            System.out.println("addUser duplicated");
             return new DataResponse(300, "중복된 아이디입니다");
         }
         userDao.addUser(id);

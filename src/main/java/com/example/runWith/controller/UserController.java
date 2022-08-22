@@ -16,7 +16,11 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/add")
-    public DataResponse addUser(@RequestParam("id") String id) { return userService.addUser(id); }
+    public DataResponse addUser(@RequestParam("id") String id) {
+        DataResponse response = userService.addUser(id);
+        System.out.println("userController addUser resultCode = " + response.getResultCode());
+        return response;
+    }
 
     @GetMapping
     public List<UserDomain> findAllUser() {
