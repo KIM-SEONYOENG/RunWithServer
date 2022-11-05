@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDomain {
+public class UserFullDomain {
     String id;
     String token;
     String member;

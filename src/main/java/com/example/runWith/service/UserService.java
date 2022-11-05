@@ -2,6 +2,7 @@ package com.example.runWith.service;
 
 import com.example.runWith.domain.DataResponse;
 import com.example.runWith.domain.UserDomain;
+import com.example.runWith.domain.UserFullDomain;
 import com.example.runWith.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,5 +53,9 @@ public class UserService {
         }
         userDao.addUser(id);
         return new DataResponse(200, "회원 가입 성공");
+    }
+
+    public UserDomain findUserById(String id) {
+        return userDao.findUserById(id);
     }
 }

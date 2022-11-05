@@ -32,6 +32,9 @@ dependencies {
 
 	implementation 'com.google.firebase:firebase-admin:6.8.1'
 	implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	implementation 'com.google.firebase:firebase-admin:6.4.0'
 }
 
 test {

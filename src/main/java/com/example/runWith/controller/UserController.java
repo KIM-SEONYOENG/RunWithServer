@@ -2,6 +2,7 @@ package com.example.runWith.controller;
 
 import com.example.runWith.domain.DataResponse;
 import com.example.runWith.domain.UserDomain;
+import com.example.runWith.domain.UserFullDomain;
 import com.example.runWith.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -45,5 +46,10 @@ public class UserController {
     @GetMapping("/idCheck")
     public DataResponse idCheck(@RequestParam("id") String id) {
         return userService.idCheck(id);
+    }
+
+    @GetMapping("/findUserById")
+    public UserDomain findUserById(@RequestParam("id") String id) {
+        return userService.findUserById(id);
     }
 }

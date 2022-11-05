@@ -13,7 +13,12 @@
         INSERT INTO token (id, token) VALUES (#{id}, #{newToken})
     </insert>
 
+    <update id="addToken" >
+
+    </update>
+
     <select id="findToken" resultType="String">
         select token FROM token WHERE id=#{id}
     </select>
+
 </mapper>
