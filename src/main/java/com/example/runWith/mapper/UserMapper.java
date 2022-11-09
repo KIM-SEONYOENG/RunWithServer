@@ -1,7 +1,6 @@
 package com.example.runWith.mapper;
 
 import com.example.runWith.domain.UserDomain;
-import com.example.runWith.domain.UserFullDomain;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

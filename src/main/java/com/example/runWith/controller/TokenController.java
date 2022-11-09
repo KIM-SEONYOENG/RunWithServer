@@ -26,7 +26,13 @@ public class TokenController {
     }
 
     @PostMapping("/newToken")
-    public DataResponse addToken(@RequestParam String id, @RequestParam String newToken){ return tokenService.addToken(id, newToken);}
+    public DataResponse addToken(@RequestParam String token){ return tokenService.addToken(token);}
+
+    @PostMapping("/updateId")
+    public DataResponse updateIdByToken(@RequestParam String id, @RequestParam String token) { return tokenService.updateIdByToken(id, token);}
+
+    @PostMapping("/updateToken")
+    public DataResponse updateTokenById(@RequestParam String id, @RequestParam String token) { return tokenService.updateTokenById(id, token);}
 
     @PostMapping("/sendMessage")
     public void pushMessage(@RequestParam String id, @RequestParam String message) throws IOException { tokenService.pushMessage(id, message); }

@@ -2,7 +2,6 @@ package com.example.runWith.service;
 
 import com.example.runWith.domain.DataResponse;
 import com.example.runWith.domain.UserDomain;
-import com.example.runWith.domain.UserFullDomain;
 import com.example.runWith.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,5 +56,28 @@ public class UserService {
 
     public UserDomain findUserById(String id) {
         return userDao.findUserById(id);
+    }
+
+    public DataResponse addMember(String id, String memberId) {
+        long result = 0;
+
+
+
+//        if(userDao.countToken(id) == 0)
+//            result = tokenDao.addToken(id, newToken);
+//        else
+//            result = tokenDao.updateToken(id, newToken);
+
+        DataResponse response = new DataResponse();
+        System.out.println("result = " + result);
+
+        if(result == 1) {
+            response.setResultCode(200);
+            response.setMessage("토큰 저장 성공");
+        } else {
+            response.setResultCode(400);
+            response.setMessage("토큰 저장 실패");
+        }
+        return response;
     }
 }

@@ -9,6 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserDomain {
     String id;
-    String token;
     String member;
 }

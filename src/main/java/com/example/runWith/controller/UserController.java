@@ -2,7 +2,6 @@ package com.example.runWith.controller;
 
 import com.example.runWith.domain.DataResponse;
 import com.example.runWith.domain.UserDomain;
-import com.example.runWith.domain.UserFullDomain;
 import com.example.runWith.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -52,4 +51,7 @@ public class UserController {
     public UserDomain findUserById(@RequestParam("id") String id) {
         return userService.findUserById(id);
     }
+
+    @PostMapping("/addMember")
+    public DataResponse addMember(@RequestParam String id, @RequestParam String memberId){ return userService.addMember(id, memberId);}
 }

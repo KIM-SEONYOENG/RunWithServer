@@ -6,7 +6,7 @@
         SELECT * FROM user
     </select>
 
-    <select id="findUserById" resultType="com.example.runWith.domain.UserFullDomain">
+    <select id="findUserById" resultType="com.example.runWith.domain.UserDomain">
         SELECT * FROM user WHERE id=#{id}
     </select>
 

@@ -11,8 +11,11 @@ import java.util.List;
 
 @Service
 public class RecordService {
-    @Autowired
-    private RecordMapper recordDao;
+    private final RecordMapper recordDao;
+
+    public RecordService(RecordMapper recordDao) {
+        this.recordDao = recordDao;
+    }
 
     public List<RecordDomain> findAllRecord() { return recordDao.findAllRecord(); }
     public RecordDomain findRecord (String id, String day) { return recordDao.findRecord(id, day); }
